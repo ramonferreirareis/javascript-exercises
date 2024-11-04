@@ -1,7 +1,11 @@
-const removeFromArray = function(array, numberToRemove) {
-    const filteredArray = array.filter(value => value !== numberToRemove);
+const removeFromArray = function(array, ...numberToRemove) {
+    const filteredArray = array.filter(value => !numberToRemove.includes(value));
     return filteredArray;
 }
+
+
+
+
 
 
 
