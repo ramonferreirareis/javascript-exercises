@@ -1,19 +1,19 @@
-const sumAll = function(num1, num2) {
-    if (num1 < 0 || num2 < 0) return "ERROR";
-    if (!Number.isInteger(num1) || !Number.isInteger(num2)) {
+const sumAll = function(min, max) {
+    if (min < 0 || max < 0) return "ERROR";
+    if (!Number.isInteger(min) || !Number.isInteger(max)) {
         return "ERROR";
     }
         
-    let smallerNumber = Math.min(num1, num2);
-    let biggerNumber = Math.max(num1, num2);
+    let smallerNumber = Math.min(min, max);
+    let biggerNumber = Math.max(min, max);
     
-    num1 = smallerNumber;
-    num2 = biggerNumber;
+    min = smallerNumber;
+    max = biggerNumber;
 
-    let addNum = num1 + 1;
-    let sumNum = num1;
+    let addNum = min + 1;
+    let sumNum = min;
 
-    for(let i = 1; i < num2; i++) {
+    for(let i = min; i < max; i++) {
         sumNum += addNum;
         addNum++;
     }
@@ -21,7 +21,7 @@ const sumAll = function(num1, num2) {
     return sumNum;
 };
 
-console.log(sumAll(4,1));
+console.log(sumAll(5,10));
 
 
 // Do not edit below this line
